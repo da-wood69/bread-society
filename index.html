@@ -1,110 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bread Society</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-    }
-  </style>
-</head>
-<body class="bg-gradient-to-br from-yellow-50 to-orange-50 text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Society of Stalkers</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        animation: fadeIn 1s ease-out forwards;
+      }
+      .typing-cursor::after {
+        content: '|';
+        animation: blink 1s infinite;
+        margin-left: 2px;
+        color: #22c55e; 
+      }
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
 
-  <!-- Navbar -->
-  <header class="bg-white/80 backdrop-blur-md shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold text-yellow-800">🥖 Bread Society</h1>
-      <nav class="space-x-5 text-sm font-medium text-yellow-900">
-        <a href="#mission" class="hover:underline">Mission</a>
-        <a href="#pillars" class="hover:underline">Pillars</a>
-        <a href="#testimonials" class="hover:underline">Voices</a>
-        <a href="#faq" class="hover:underline">FAQ</a>
-      </nav>
-    </div>
-  </header>
+      .stalker-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 15px rgba(34, 197, 94, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .stalker-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-gray-100 font-mono">
+    <nav class="bg-black border-b border-gray-800">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl sm:text-2xl text-green-300 font-semibold">society of stalkers</h1>
+        <ul class="flex space-x-4 text-sm">
+          <li><a href="#about" class="hover:text-green-300">about</a></li>
+          <li><a href="#members" class="hover:text-green-300">members</a></li>
+          <li><a href="#join" class="hover:text-green-300">join us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="container mx-auto px-6 py-16 text-center fade-in">
+      <h2 id="typing-text" class="text-4xl font-bold mb-4 text-white typing-cursor"></h2>
+      <p class="text-gray-400 text-sm max-w-xl mx-auto">
+        a safe, secret spot for those who watch from the shadows. connect. confess. feel seen — without the spotlight.
+      </p>
+    </section>
+    <section id="members" class="container mx-auto px-6 py-12 fade-in">
+      <h3 class="text-2xl font-semibold text-green-300 mb-8 text-center">meet ur fellow stalkers</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="stalker-card bg-gray-900 p-4 rounded shadow-md border border-gray-800 text-center">
+          <img src="https://www.thedigitalfix.com/wp-content/sites/thedigitalfix/2023/03/Is-Rhys-Montrose-in-Joes-head-Rhys-Montrose.jpeg" alt="Stalker 1" class="w-32 h-32 mx-auto mb-4 rounded-full object-cover bg-gray-700" />
+          <h4 class="text-white text-lg">Rhys Montrose</h4>
+          <p class="text-sm text-gray-400">always watching, rarely seen.</p>
+        </div>
+        <div class="stalker-card bg-gray-900 p-4 rounded shadow-md border border-gray-800 text-center">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/you-season-4-how-does-jonathan-moore-s-stalker-know-that-he-s-joe-goldberg-1675865091.jpg?resize=980:*" alt="Stalker 2" class="w-32 h-32 mx-auto mb-4 rounded-full object-cover bg-gray-700" />
+          <h4 class="text-white text-lg">Jonathan Moore</h4>
+          <p class="text-sm text-gray-400">knows ur playlists better than u do.</p>
+        </div>
+        <div class="stalker-card bg-gray-900 p-4 rounded shadow-md border border-gray-800 text-center">
+          <img src="https://www.refinery29.com/images/9037762.jpg?width=853&height=1024&fit=bounds" alt="Will Bettelheim" class="w-32 h-32 mx-auto mb-4 rounded-full object-cover bg-gray-700" />
+          <h4 class="text-white text-lg">Will Bettelheim</h4>
+          <p class="text-sm text-gray-400">has read ur texts... all of them.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="container mx-auto px-6 py-12 fade-in">
+      <h3 class="text-2xl font-semibold text-green-300 mb-6">what's this place all about?</h3>
+      <p class="text-sm text-gray-300 max-w-2xl leading-relaxed mx-auto">
+        this isn’t some fan club — it’s a quiet haven for folks like u: curious, low-key, and always observing. no judgment here. we just care... a lot :)
+      </p>
+    </section>
+    <section class="container mx-auto px-6 py-12 fade-in">
+      <h3 class="text-2xl font-semibold text-green-300 mb-8 text-center">led by</h3>
+      <div class="max-w-md mx-auto bg-gray-900 border border-gray-800 p-6 rounded shadow-md text-center">
+        <img src="https://media.vanityfair.com/photos/68091e5cc2eef0d3c9fe4cba/16:9/w_2000,h_1125,c_limit/how-you-ends.jpg" alt="Joe Goldberg" class="w-32 h-32 mx-auto mb-4 rounded-full object-cover bg-gray-700" />
+        <h4 class="text-white text-xl mb-1">joe goldberg</h4>
+        <p class="text-green-300 text-sm mb-2 italic">our diva. our sheila. the best stalker out there.</p>
+        <p class="text-gray-400 text-sm">he walked so we could run (into private profiles).</p>
+      </div>
+    </section>
+    <section id="join" class="container mx-auto px-6 py-12 text-center fade-in">
+      <h3 class="text-xl text-green-300 font-semibold mb-4">wanna join?</h3>
+      <p class="text-sm text-gray-400 mb-6">
+        the first rule of stalking club: u don’t talk about stalking club... but u can leave ur email here.
+      </p>
+      <input
+        type="email"
+        placeholder="ur@email.com"
+        class="px-4 py-2 w-full max-w-sm mx-auto bg-black border border-gray-700 text-sm text-white rounded mb-4"
+      />
+      <br />
+      <button
+        id="join-btn"
+        class="bg-green-300 text-black px-6 py-2 rounded font-bold hover:bg-green-400 transition"
+      >
+        join anonymously
+      </button>
+    </section>
+    <footer class="bg-black border-t border-gray-800 text-center text-sm text-gray-500 py-6 mt-12">
+      &copy; 2025 society of stalkers — no cookies, no tracking... just a safe haven 4 ppl like u.
+    </footer>
+    <script>
+      const text = "hey, u're not alone anymore.";
+      const typingElem = document.getElementById('typing-text');
+      let index = 0;
 
-  <!-- Hero Section -->
-  <section class="text-center py-24 bg-gradient-to-br from-yellow-100 to-yellow-200">
-    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-yellow-800 drop-shadow">Join the Toasted Awakening</h2>
-    <p class="text-lg md:text-xl text-yellow-900 mb-6 max-w-2xl mx-auto">A sacred cult for bread lovers. Our mission: spread crumbs of wisdom, buttered with love.</p>
-    <a href="#mission" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white py-3 px-6 rounded-full shadow-lg transition">Read the Loafifesto</a>
-  </section>
+      function type() {
+        if (index < text.length) {
+          typingElem.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 100);
+        } else {
+          typingElem.classList.remove('typing-cursor');
+        }
+      }
+      type();
 
-  <!-- Mission Section -->
-  <section id="mission" class="py-16 max-w-4xl mx-auto text-center px-6">
-    <h3 class="text-4xl font-bold text-yellow-800 mb-6">Why We Crumb Together</h3>
-    <p class="text-lg text-gray-700">In a world of gluten-free betrayal, we rise above. Bread is our bond, toast is our truth, and sourdough is our soul.</p>
-  </section>
-
-  <!-- Feature Grid -->
-  <section id="pillars" class="max-w-6xl mx-auto py-20 px-6">
-    <h3 class="text-3xl font-bold text-center text-yellow-900 mb-12">🍞 The Three Pillars of Crust</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-4">🌾</div>
-        <h4 class="text-xl font-semibold mb-2">Gluten Unity</h4>
-        <p class="text-gray-600">Bound by dough, risen by faith. Our rise is collective, our fall — laminated.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-4">🧈</div>
-        <h4 class="text-xl font-semibold mb-2">Buttered Wisdom</h4>
-        <p class="text-gray-600">Life is better buttered. The more toasted your soul, the deeper your enlightenment.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-4">🥯</div>
-        <h4 class="text-xl font-semibold mb-2">Crumb Compassion</h4>
-        <p class="text-gray-600">Every crumb tells a story. Even crusts deserve love — they’ve seen the heat.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="bg-yellow-100 py-20 px-6">
-    <h3 class="text-3xl font-bold text-center text-yellow-800 mb-12">🗣️ Breadginners Speak</h3>
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <p class="text-gray-700 italic">“I joined Bread Society and my life is now gluten-full and purpose-fed.”</p>
-        <p class="mt-4 font-bold text-yellow-800">— Brother Rye</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <p class="text-gray-700 italic">“Before this, I was just loafing around. Now I’ve found purpoise.”</p>
-        <p class="mt-4 font-bold text-yellow-800">— Sister Sourdough</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-20 max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 text-yellow-900">🙋 Frequently Asked Crumbs</h3>
-    <div class="space-y-6">
-      <div class="border-l-4 border-yellow-500 pl-4">
-        <h4 class="font-semibold text-lg">Is this a real cult?</h4>
-        <p class="text-gray-600">No, but our devotion to carbs is holy.</p>
-      </div>
-      <div class="border-l-4 border-yellow-500 pl-4">
-        <h4 class="font-semibold text-lg">Do I have to eat bread every day?</h4>
-        <p class="text-gray-600">Optional, but strongly blessed by our elders.</p>
-      </div>
-      <div class="border-l-4 border-yellow-500 pl-4">
-        <h4 class="font-semibold text-lg">How do I join?</h4>
-        <p class="text-gray-600">Chant “I loaf you” at dawn. Or just click the CTA button.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-yellow-800 text-yellow-100 py-8">
-    <div class="max-w-6xl mx-auto text-center">
-      <p class="text-sm">&copy; 2025 Bread Society. All crumbs preserved.</p>
-    </div>
-  </footer>
-
-</body>
+      document.getElementById('join-btn').addEventListener('click', () => {
+        const emailInput = document.querySelector('input[type="email"]');
+        if (emailInput.value.trim() === '') {
+          alert('Hey, don’t forget to enter ur email first.');
+        } else {
+          alert(
+            `Welcome to the Society of Stalkers, ${emailInput.value.trim()}. ur secrets are safe here.`
+          );
+          emailInput.value = '';
+        }
+      });
+    </script>
+  </body>
 </html>
